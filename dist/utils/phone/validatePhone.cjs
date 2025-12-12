@@ -1,4 +1,4 @@
-const require_validatePhone = require('../../validatePhone-DcyPx7Wi.cjs');
+const require_validatePhone = require('../../validatePhone-DR-nxat8.cjs');
 
 exports.isBlockedNumber = require_validatePhone.isBlockedNumber;
 exports.isEmpty = require_validatePhone.isEmpty;

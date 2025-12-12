@@ -49,6 +49,7 @@ type ElWithState = HTMLInputElement & {
 type ResolvedOpts = {
   opts: PhoneOpts
   previewEl: HTMLElement | null
+  missingPreviewTarget: boolean
 }
 
 /**
@@ -64,6 +65,10 @@ function resolve(
   el: ElWithState
 ): ResolvedOpts {
   const value = binding.value || {}
+  const doc =
+    typeof globalThis !== 'undefined' && 'document' in globalThis
+      ? (globalThis.document as Document | undefined)
+      : undefined
 
   const opts: PhoneOpts = {
     autoFormat: value.autoFormat ?? false,
@@ -81,14 +86,29 @@ function resolve(
     },
   }
 
-  const previewEl: HTMLElement | null = value.previewSelector
-    ? (el.closest('form')?.querySelector(value.previewSelector) ??
-      document.querySelector(value.previewSelector))
-    : null
+  const selector = value.previewSelector?.trim()
+  let previewEl: HTMLElement | null = null
+  let attemptedLookup = false
+
+  if (selector) {
+    const formRoot = el.closest('form')
+    if (formRoot) {
+      attemptedLookup = true
+      previewEl = formRoot.querySelector(selector)
+    }
+
+    if (!previewEl && doc) {
+      attemptedLookup = true
+      previewEl = doc.querySelector(selector)
+    }
+  }
 
   return {
     opts,
     previewEl,
+    missingPreviewTarget: Boolean(
+      selector && attemptedLookup && !previewEl && doc
+    ),
   }
 }
 
@@ -129,9 +149,9 @@ export default {
   /** Initialises listeners, preview target, and auto-format behaviour. */
   mounted(el: HTMLInputElement, binding: { value?: PhoneOpts }) {
     const input = el as ElWithState
-    const { opts, previewEl } = resolve(binding, input)
+    const { opts, previewEl, missingPreviewTarget } = resolve(binding, input)
 
-    if (!previewEl && Boolean(binding?.value?.previewSelector)) {
+    if (missingPreviewTarget) {
       console.warn('[v-phone] Preview element not found for selector:', {
         previewSelector: binding.value?.previewSelector,
       })
@@ -199,11 +219,17 @@ export default {
       return
     }
 
-    const { opts, previewEl } = resolve(binding, input)
+    const { opts, previewEl, missingPreviewTarget } = resolve(binding, input)
     input.__phone__.opts = opts
 
     if (previewEl instanceof HTMLElement) {
       input.__phone__.previewEl = previewEl
+    }
+
+    if (missingPreviewTarget) {
+      console.warn('[v-phone] Preview element not found for selector:', {
+        previewSelector: binding.value?.previewSelector,
+      })
     }
 
     const r = normalisePhone(input.value || '', opts)

@@ -60,6 +60,12 @@
     "typescript": "5.9.3",
     "vitest": "4.0.15"
   },
+  "browserslist": [
+    ">0.3%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",

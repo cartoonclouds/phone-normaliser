@@ -89,6 +89,10 @@ const { value, phone, valid, changes, apply } = usePhone('', {
 
 The directive emits a `directive:phone:normalised` event when validation fails so forms can react immediately.
 
+## Browser Support
+
+The published bundles target ES2018 syntax and ship ESM + CJS builds that align with the `browserslist` query `>0.3%, last 2 versions, Firefox ESR, not dead`. In practice that covers the latest Chrome, Edge, Firefox (stable + ESR) and Safari 14+ on macOS/iOS, along with their Android counterparts. The Vue directive lazily accesses `document`, so it also plays nicely with SSR setups where the DOM is unavailable during server renders.
+
 ## API Reference
 
 ### `normalisePhone(input, options?)`

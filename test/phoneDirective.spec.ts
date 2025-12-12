@@ -104,6 +104,24 @@ describe('PhoneDirective', () => {
     warn.mockRestore()
   })
 
+  it('silently skips preview lookups when document is unavailable', () => {
+    const input = document.createElement('input')
+    input.value = '+14155552671'
+
+    vi.stubGlobal('document', undefined)
+
+    expect(() =>
+      PhoneDirective.mounted(input, {
+        value: {
+          defaultCountry: 'US',
+          previewSelector: '#missing',
+        },
+      })
+    ).not.toThrow()
+
+    vi.unstubAllGlobals()
+  })
+
   it('supports granular auto format event toggles', () => {
     const input = mount('4155552671', {
       autoFormat: true,
