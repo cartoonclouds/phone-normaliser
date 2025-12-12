@@ -1,0 +1,77 @@
+{
+  "name": "@cartoonclouds/phone-normaliser",
+  "version": "0.1.0",
+  "description": "Phone number normalization, validation helpers, Vue directives and composables.",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./utils/phone/normalisePhone": {
+      "types": "./dist/utils/phone/normalisePhone.d.ts",
+      "import": "./dist/utils/phone/normalisePhone.js",
+      "require": "./dist/utils/phone/normalisePhone.cjs"
+    },
+    "./utils/phone/validatePhone": {
+      "types": "./dist/utils/phone/validatePhone.d.ts",
+      "import": "./dist/utils/phone/validatePhone.js",
+      "require": "./dist/utils/phone/validatePhone.cjs"
+    },
+    "./composables/usePhone": {
+      "types": "./dist/composables/usePhone.d.ts",
+      "import": "./dist/composables/usePhone.js",
+      "require": "./dist/composables/usePhone.cjs"
+    },
+    "./directives/phone": {
+      "types": "./dist/directives/phone.d.ts",
+      "import": "./dist/directives/phone.js",
+      "require": "./dist/directives/phone.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown --config tsdown.config.ts",
+    "dev": "tsdown --config tsdown.config.ts --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint --fix .",
+    "docs": "typedoc"
+  },
+  "peerDependencies": {
+    "vue": "3.5.*"
+  },
+  "dependencies": {
+    "libphonenumber-js": "1.11.18"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "4.0.15",
+    "jsdom": "27.3.0",
+    "tsdown": "^0.17.3",
+    "typedoc": "0.28.15",
+    "typedoc-plugin-markdown": "4.9.0",
+    "typescript": "5.9.3",
+    "vitest": "4.0.15"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cartoonclouds/phone-normaliser.git"
+  },
+  "keywords": [
+    "phone",
+    "normalisation",
+    "validation",
+    "vue",
+    "directive",
+    "composable",
+    "e164"
+  ]
+}

@@ -1,0 +1,6 @@
+export * from './utils/phone/constants'
+export * from './utils/phone/normalisePhone'
+export * from './utils/phone/validatePhone'
+export * from './utils/phone/types'
+export * from './composables/usePhone'
+export { default as PhoneDirective, type PhoneOpts } from './directives/phone'
