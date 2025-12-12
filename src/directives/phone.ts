@@ -1,3 +1,4 @@
+import { getDocument } from '../utils/dom/getDocument'
 import {
   DEFAULT_BLOCKLIST,
   DEFAULT_REGION_FALLBACKS,
@@ -65,10 +66,7 @@ function resolve(
   el: ElWithState
 ): ResolvedOpts {
   const value = binding.value || {}
-  const doc =
-    typeof globalThis !== 'undefined' && 'document' in globalThis
-      ? (globalThis.document as Document | undefined)
-      : undefined
+  const doc = getDocument()
 
   const opts: PhoneOpts = {
     autoFormat: value.autoFormat ?? false,
