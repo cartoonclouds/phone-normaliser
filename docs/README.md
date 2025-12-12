@@ -1,5 +1,3 @@
-> Generated reference for `@cartoonclouds/phone-normaliser`. Run `npm run docs` after API changes to refresh this file.
-
 **@cartoonclouds/phone-normaliser v0.1.0**
 
 ***

@@ -6,6 +6,6 @@
 
 > `const` **DEFAULT\_BLOCKLIST**: [`PhoneBlockConfig`](../type-aliases/PhoneBlockConfig.md)
 
-Defined in: [utils/phone/constants.ts:60](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/constants.ts#L60)
+Defined in: [utils/phone/constants.ts:62](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/constants.ts#L62)
 
 Opinionated starter blocklist that callers can extend or replace.
