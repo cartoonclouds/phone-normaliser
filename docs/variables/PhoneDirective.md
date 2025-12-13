@@ -6,7 +6,7 @@
 
 > **PhoneDirective**: `object`
 
-Defined in: [directives/phone.ts:150](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/directives/phone.ts#L150)
+Defined in: [directives/phone.ts:146](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/directives/phone.ts#L146)
 
 Vue directive hooks for v-phone.
 

@@ -1,4 +1,4 @@
-import { getDocument } from '../utils/dom/getDocument'
+import { getConsole, getDocument } from '../utils/dom/utils'
 import {
   DEFAULT_BLOCKLIST,
   DEFAULT_REGION_FALLBACKS,
@@ -150,7 +150,7 @@ export default {
     const { opts, previewEl, missingPreviewTarget } = resolve(binding, input)
 
     if (missingPreviewTarget) {
-      console.warn('[v-phone] Preview element not found for selector:', {
+      getConsole()?.warn('[v-phone] Preview element not found for selector:', {
         previewSelector: binding.value?.previewSelector,
       })
     }
@@ -225,7 +225,7 @@ export default {
     }
 
     if (missingPreviewTarget) {
-      console.warn('[v-phone] Preview element not found for selector:', {
+      getConsole()?.warn('[v-phone] Preview element not found for selector:', {
         previewSelector: binding.value?.previewSelector,
       })
     }

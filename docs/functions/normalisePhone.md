@@ -6,7 +6,7 @@
 
 > **normalisePhone**(`raw`, `options`): [`PhoneNormResult`](../type-aliases/PhoneNormResult.md)
 
-Defined in: [utils/phone/normalisePhone.ts:148](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/normalisePhone.ts#L148)
+Defined in: [utils/phone/normalisePhone.ts:149](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/normalisePhone.ts#L149)
 
 Full phone number normaliser that cleans, parses, and validates input.
 

@@ -4,6 +4,7 @@ import {
   parsePhoneNumberFromString,
 } from 'libphonenumber-js/max'
 
+import { getConsole } from '../dom/utils'
 import {
   DEFAULT_BLOCKLIST,
   DEFAULT_MAX_LENGTH,
@@ -48,7 +49,7 @@ export function validationCodeToReason(
     case PhoneValidationCodes.VALID:
       return 'Phone number is valid.'
     default:
-      console.warn(`Unknown phone validation code: ${code as string}`)
+      getConsole()?.warn(`Unknown phone validation code: ${code as string}`)
 
       return null
   }

@@ -1,3 +1,4 @@
+import { getConsole } from '../dom/utils'
 import type { PhoneChangeCode } from './constants'
 import {
   DEFAULT_BLOCKLIST,
@@ -115,7 +116,7 @@ function mapChangeCodesToReason(codes: PhoneChangeCode[]): string[] {
         reasons.push('Phone number could not be parsed.')
         break
       default:
-        console.warn(`Unknown phone change code: ${code as string}`)
+        getConsole()?.warn(`Unknown phone change code: ${code as string}`)
         break
     }
   }

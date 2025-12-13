@@ -6,7 +6,7 @@
 
 > **PhoneOpts** = [`PhoneNormOptions`](PhoneNormOptions.md) & `object`
 
-Defined in: [directives/phone.ts:15](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/directives/phone.ts#L15)
+Defined in: [directives/phone.ts:16](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/directives/phone.ts#L16)
 
 Public options accepted by the v-phone directive binding.
 

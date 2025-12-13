@@ -6,7 +6,7 @@
 
 > **validatePhone**(`raw`, `options?`): [`ValidationResults`](../type-aliases/ValidationResults.md)
 
-Defined in: [utils/phone/validatePhone.ts:244](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L244)
+Defined in: [utils/phone/validatePhone.ts:245](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L245)
 
 Performs multi-pass validation and returns every triggered rule.
 

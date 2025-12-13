@@ -6,7 +6,7 @@
 
 > **isEmpty**(`raw`): `boolean`
 
-Defined in: [utils/phone/validatePhone.ts:63](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L63)
+Defined in: [utils/phone/validatePhone.ts:64](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L64)
 
 Returns true when the provided string is only whitespace.
 

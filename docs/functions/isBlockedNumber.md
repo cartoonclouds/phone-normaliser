@@ -6,7 +6,7 @@
 
 > **isBlockedNumber**(`value`, `cfg`, `country`): `boolean`
 
-Defined in: [utils/phone/validatePhone.ts:103](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L103)
+Defined in: [utils/phone/validatePhone.ts:104](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L104)
 
 Evaluates the provided number against block/allow rules.
 

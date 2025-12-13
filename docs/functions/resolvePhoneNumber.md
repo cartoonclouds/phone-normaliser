@@ -6,7 +6,7 @@
 
 > **resolvePhoneNumber**(`raw`, `config?`): \{ `phoneNumber`: `PhoneNumber`; `usedFallback?`: `CountryCode`; \} \| `null`
 
-Defined in: [utils/phone/validatePhone.ts:189](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L189)
+Defined in: [utils/phone/validatePhone.ts:190](https://gitlab.com/good-life/glp-frontend/-/blob/main/packages/phone-normaliser/src/utils/phone/validatePhone.ts#L190)
 
 Attempts to parse by walking default/fallback regions.
 
